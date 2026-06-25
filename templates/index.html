@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Fill the form to Predict Performance Index</h1>
+
+    <form action="/predict" method="post">
+      <input type="text" name="Hours" placeholder="Hours" /><br />
+      <input
+        type="text"
+        name="Previous_Scores"
+        placeholder="Previous_Scores"
+      /><br />
+      <input
+        type="text"
+        name="Extracurricular_Activities"
+        placeholder="Extracurricular_Activities"
+      /><br />
+      <input type="text" name="Sleep_Hours" placeholder="Sleep_Hours" /><br />
+      <input
+        type="text"
+        name="Sample_Question_Papers_Practiced"
+        placeholder="Sample Question Papers Practiced"
+      /><br />
+
+      <button type="submit">Predict</button>
+
+      {% if prediction is not none %}
+      <h2>Prediction: {{ prediction }}</h2>
+      {% endif %}
+    </form>
+  </body>
+</html>
